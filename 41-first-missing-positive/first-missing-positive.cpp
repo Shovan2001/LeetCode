@@ -2,7 +2,7 @@ class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) 
     {
-        int maxi=1;
+        int maxi=0;
         for(int i=0;i<nums.size();i++)
         maxi=max(maxi,nums[i]);
 
