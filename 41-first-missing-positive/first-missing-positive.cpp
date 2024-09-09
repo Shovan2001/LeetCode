@@ -10,7 +10,7 @@ public:
         for(int i=0;i<nums.size();i++)
         s.insert(nums[i]);
 
-        for(int i=1;i<=maxi;i++)
+        for(int i=1;i<maxi;i++)
         {
             if(s.find(i)==s.end())
             return i;
