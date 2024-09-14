@@ -6,7 +6,7 @@ public:
 
         while(i<=h)
         {
-            if(nums[i]<1)
+            if(nums[i]==0)
             {
                 swap(nums[i],nums[l]);
                 i++;
