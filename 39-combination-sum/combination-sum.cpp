@@ -27,16 +27,15 @@ public:
                 ans.push_back(res);
             return;
         }
-        // vector<int>op1=res;
-        // vector<int>op2=res;
+        vector<int>op1=res;
+        vector<int>op2=res;
 
         if(nums[idx]<=target)
         {
-            res.push_back(nums[idx]);
-            solve(ans,res,nums,idx,target-nums[idx]);
-            res.pop_back();
+            op1.push_back(nums[idx]);
+            solve(ans,op1,nums,idx,target-nums[idx]);
         }
-        solve(ans,res,nums,idx+1,target);
+        solve(ans,op2,nums,idx+1,target);
         
     }
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
