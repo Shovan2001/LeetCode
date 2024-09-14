@@ -3,26 +3,28 @@ public:
     void sortColors(vector<int>& nums) 
     {
         int i=0,l=0,h=nums.size()-1;
-
+        //l's left has all 0s
+        //h's right has all 2s
+        //l denotes the place everything to its left is sorted
+        // h denotes the place everything to its right is sorted
         while(i<=h)
         {
             if(nums[i]==0)
             {
-                swap(nums[i],nums[l]);
-                i++;
+                swap(nums[l],nums[i]);
                 l++;
-            }
-            else if(nums[i]==1)
-            {
                 i++;
             }
-            // else if(nums[i]>1)
+            else if(nums[i]==2)
+            {
+                swap(nums[h],nums[i]);
+                h--;
+            }
             else
             {
-                swap(nums[i],nums[h]);
-                h--;
-            //    i++;
+                i++;
             }
         }
+        cout<<l<<i<<h;
     }
 };
