@@ -30,9 +30,9 @@ public:
             {
                 freq[4]=((freq[4]+1)%2);
             }
-            currfreq="";
+            
             currfreq=to_string(freq[0])+to_string(freq[1])+to_string(freq[2])+to_string(freq[3])+to_string(freq[4]);
-            // cout<<currfreq<<"\n";
+            
             if(m.find(currfreq)!=m.end())
             {
                 res=i-m[currfreq];
