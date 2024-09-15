@@ -12,23 +12,23 @@ public:
         {
             if(s[i]=='a')
             {
-                freq[0]=((freq[0]+1)%2);
+                freq[0]=freq[0]^1;
             }
             else if(s[i]=='e')
             {
-                freq[1]=((freq[1]+1)%2);
+                freq[1]=freq[1]^1;
             }
             else if(s[i]=='i')
             {
-                freq[2]=((freq[2]+1)%2);
+                freq[2]=freq[2]^1;
             }
             else if(s[i]=='o')
             {
-                freq[3]=((freq[3]+1)%2);
+                freq[3]=freq[3]^1;
             }
             else if(s[i]=='u')
             {
-                freq[4]=((freq[4]+1)%2);
+                freq[4]=freq[4]^1;
             }
             
             currfreq=to_string(freq[0])+to_string(freq[1])+to_string(freq[2])+to_string(freq[3])+to_string(freq[4]);
