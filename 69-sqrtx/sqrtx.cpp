@@ -4,8 +4,7 @@ public:
     {
         if(x==0 || x==1)
         return x;
-        long l=0,h=x/2,mid;
-        long ans;
+        long l=0,h=x/2,mid,ans;
         while(l<=h)
         {
             mid=l+(h-l)/2;
