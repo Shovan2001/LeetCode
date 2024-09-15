@@ -7,7 +7,7 @@ public:
         long l=0,h=x/2,mid,ans;
         while(l<=h)
         {
-            mid=l+(h-l)/2;
+            mid=h-(h-l)/2;
             if(mid*mid==x)
             {
                 return mid;
