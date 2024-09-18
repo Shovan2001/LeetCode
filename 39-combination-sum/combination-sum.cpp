@@ -19,7 +19,7 @@ public:
     //     helper(ans,subans,candidates,index+1,target);
         
     // }
-    void solve(vector<vector<int>>&ans,vector<int>&res,vector<int>nums,int idx,int target)
+    void solve(vector<vector<int>>&ans,vector<int>&res,vector<int> &nums,int idx,int target)
     {
         if(idx==nums.size())
         {
