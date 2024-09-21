@@ -25,7 +25,7 @@ public:
 
     void solve(vector<vector<int>>&ans,vector<int> &res,vector<int> &nums,int idx)
     {
-        if(res.size()==nums.size())
+        if(idx==nums.size())
         {
             // if(res.size()==nums.size())
             ans.push_back(res);
