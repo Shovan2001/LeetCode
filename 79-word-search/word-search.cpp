@@ -8,6 +8,9 @@ public:
         if(i<0 || j<0 || i==m || j==n || board[i][j]!=word[idx])
         return false;
 
+        if(board[i][j]=='$')
+        return false;
+        
         char temp=board[i][j];
         board[i][j]='$';
         
