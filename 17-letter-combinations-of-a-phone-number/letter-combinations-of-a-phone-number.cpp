@@ -3,7 +3,7 @@ public:
 
     void solve(vector<string> &ans,string digits,string op,unordered_map<char,string>mp,int idx)
     {
-        if(idx==digits.length())
+        if(idx==digits.size())
         {
             ans.push_back(op);
             return;
@@ -17,8 +17,6 @@ public:
             op.push_back(res[i]);
             solve(ans,digits,op,mp,idx+1);
             op.pop_back();
-
-            // solve(ans,digits,op,mp,idx+1);
         }
     }
     vector<string> letterCombinations(string digits) 
