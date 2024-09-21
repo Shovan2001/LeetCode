@@ -9,6 +9,8 @@ public:
 
         for(int j=0;j<=9;j++)
         {
+            if(curr_num*10>n)
+            return;
             solve(ans,(curr_num*10)+j,n);
         }
 
