@@ -5,7 +5,7 @@ public:
         int l=0,h=nums.size();
         while(l<h)
         {
-            int mid=(l+h)/2;
+            int mid=l+(h-l)/2;
             if(nums[mid]<target)
             l=mid+1;
             else
