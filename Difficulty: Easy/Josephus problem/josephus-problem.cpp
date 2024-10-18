@@ -10,41 +10,27 @@ using namespace std;
 class Solution
 {
     public:
-    
-    void solve(vector<int>persons , int k , int index , int &ans)
+    int solve(vector<int> &nums,int n,int k,int idx)
     {
-        if(persons.size()==1)
-        {
-            ans=persons[0];
-            return;
-        }
+        if(nums.size()==1)
+        return nums[0];
         
-        index=(index+k)%persons.size();
+        idx=(idx+k)%nums.size();
         
-        persons.erase(persons.begin()+index);
+        nums.erase(nums.begin()+idx);
         
-        solve(persons,k,index,ans);
+        solve(nums,n,k,idx);
     }
     int josephus(int n, int k)
     {
        //Your code here
-       if(n==1)
-       return n;
-       
+       vector<int>nums;
        k=k-1;
+       for(int i=1;i<=n;i++)
+       nums.push_back(i);
        
-       vector<int>persons;
-       
-       for(int i = 1 ; i <= n ; i++)
-       {
-           persons.push_back(i);
-       }
-       
-       int index = 0 , ans = -1;
-       
-       solve(persons , k , index , ans);
-       
-       return ans;
+       return solve(nums,n,k,0);
+        
     }
 };
 
