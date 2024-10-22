@@ -10,35 +10,33 @@ using namespace std;
 
 class Solution {
   public:
-  
-    void solve(vector<string> &ans,vector<vector<int>> &mat,int i,int j,int m,int n,string op)
+    void solve(vector<vector<int>> &mat,vector<string> &ans,int row,int col,string op,int n)
     {
-        if(i<0 || j<0 || i==m || j==n || mat[i][j]==0)
+        if(row>=n || col>=n || row<0 || col<0 || mat[row][col]==0)
         return;
         
-        if(i==m-1 && j==n-1)
+        if(row==n-1 && col==n-1)
         {
             ans.push_back(op);
             return;
         }
         
-        mat[i][j]=0;
+           
+        mat[row][col]=0;
         
-        solve(ans,mat,i-1,j,m,n,op+'U');
-        solve(ans,mat,i+1,j,m,n,op+'D');
-        solve(ans,mat,i,j-1,m,n,op+'L');
-        solve(ans,mat,i,j+1,m,n,op+'R');
+        solve(mat,ans,row-1,col,op+'U',n);
+        solve(mat,ans,row+1,col,op+'D',n);
+        solve(mat,ans,row,col-1,op+'L',n);
+        solve(mat,ans,row,col+1,op+'R',n);
         
-        mat[i][j]=1;
+        mat[row][col]=1;
         
     }
-    vector<string> findPath(vector<vector<int>> &mat) 
-    {
+    vector<string> findPath(vector<vector<int>> &mat) {
         // Your code goes here
-        int m=mat.size();
-        int n=mat[0].size();
         vector<string>ans;
-        solve(ans,mat,0,0,m,n,"");
+        int n=mat.size();
+        solve(mat,ans,0,0,"",n);
         return ans;
     }
 };
