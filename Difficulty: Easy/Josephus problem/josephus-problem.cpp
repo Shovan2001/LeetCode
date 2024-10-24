@@ -10,27 +10,24 @@ using namespace std;
 class Solution
 {
     public:
-    int solve(vector<int> &nums,int n,int k,int idx)
-    {
-        if(nums.size()==1)
-        return nums[0];
+    // int solve(vector<int> &nums, int n, int k,int idx)
+    // {
+    //     if(nums.size()==1)
+    //     return nums[0];
         
-        idx=(idx+k)%nums.size();
+    //     idx=(idx+k)%nums.size();
         
-        nums.erase(nums.begin()+idx);
+    //     nums.erase(nums.begin()+idx);
         
-        solve(nums,n,k,idx);
-    }
+    //     solve(nums,n,k,idx);
+    // }
     int josephus(int n, int k)
     {
        //Your code here
-       vector<int>nums;
-       k=k-1;
-       for(int i=1;i<=n;i++)
-       nums.push_back(i);
+       if(n==1)
+       return n;
        
-       return solve(nums,n,k,0);
-        
+       else return (josephus(n-1,k)+k-1)%n+1;
     }
 };
 
@@ -50,7 +47,9 @@ int main() {
 		//calling josephus() function
 		Solution ob;
 		cout<<ob.josephus(n,k)<<endl;
-	}
+	
+cout << "~" << "\n";
+}
 	return 0;
 }
 // } Driver Code Ends
