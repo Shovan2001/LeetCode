@@ -12,7 +12,6 @@ public:
             else
             {
                 int c=0;
-                cout<<word<<"\n";
                 for(int j=0;j<brokenLetters.length();j++)
                 {
                     if(word.find(brokenLetters[j])!=string::npos)
