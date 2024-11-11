@@ -13,9 +13,7 @@ bool isPrime(int x)
     {
         for(int i=nums.size()-2;i>=0;i--)
         {
-            if(nums[i]<nums[i+1])
-            continue;
-            else
+            if(nums[i]>=nums[i+1])
             {
                 for(int p=2;p<nums[i];p++)
                 {
