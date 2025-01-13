@@ -10,30 +10,28 @@ using namespace std;
 
 class Solution{
 public:
-    void Reverse(stack<int> &St)
+    void insert(stack<int> &St,int temp)
     {
-        if(St.size()==1)
-        return ;
-        
-        int temp=St.top();
-        St.pop();
-        Reverse(St);
-        insert(St,temp);
-            
-    }
-    
-    void insert(stack<int> & st,int temp)
-    {
-        if(st.size()==0)
+        if(St.size()==0)
         {
-            st.push(temp);
+            St.push(temp);
             return;
         }
         
-        int temp1=st.top();
-        st.pop();
-        insert(st,temp);
-        st.push(temp1);
+        int top=St.top();
+        St.pop();
+        insert(St,temp);
+        St.push(top);
+    }
+    void Reverse(stack<int> &St)
+    {
+        if(St.size()==1)
+        return;
+        
+        int top=St.top();
+        St.pop();
+        Reverse(St);
+        insert(St,top);
     }
 };
 
@@ -66,6 +64,8 @@ int main(){
         }
         
         cout<<endl;
-    }
+    
+cout << "~" << "\n";
+}
 }
 // } Driver Code Ends
