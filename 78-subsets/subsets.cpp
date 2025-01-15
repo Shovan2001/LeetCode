@@ -8,15 +8,10 @@ public:
             return;
         }
         
-        // vector<int>sub1=sub;
-        // vector<int>sub2=sub;
-        
-        // sub1.push_back(nums[0]);
-        // nums.erase(nums.begin()+0);
         sub.push_back(nums[idx]);
         solve(nums,sub,ans,idx+1);
         sub.pop_back();
-        
+
         solve(nums,sub,ans,idx+1);
         
     }
