@@ -19,15 +19,22 @@ public:
         string ans="";
         ans+=to_string(root->val);
 
-        if(root->left!=NULL)
-        ans+="("+tree2str(root->left)+")";
-        
-        if(root->right!=NULL)
-        {
-            if(root->left==NULL)
-            ans+="()";
-            ans+="("+tree2str(root->right)+")";
-        }
+        if(root->left==NULL && root->right==NULL)
         return ans;
+        
+        string leftpart=tree2str(root->left);
+        string rightpart=tree2str(root->right);
+
+        if(root->left==NULL)
+        {
+            return ans+"()"+"("+rightpart+")";
+        }
+        
+        if(root->right==NULL)
+        {
+            return ans+"("+leftpart+")";
+        }
+        
+        return ans+"("+leftpart+")"+"("+rightpart+")";
     }
 };
