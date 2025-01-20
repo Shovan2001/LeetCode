@@ -9,12 +9,13 @@ public:
             string temp="";
             for(int i=0;i<s.size();i++)
             {
-                if(s[i]=='z')
+                if(s[i]!='z')
                 {
-                    temp+="a";
-                    continue;
+                    temp+=s[i]+1;
+                    // continue;
                 }
-                temp+=s[i]+1;
+                else
+                temp+="a";
             }
             s+=temp;
         }
