@@ -6,7 +6,7 @@ public:
 
         for(int i=0;i<expression.length();i++)
         {
-            if(expression[i]=='+' || expression[i]=='-' || expression[i]=='*' || expression[i]=='/')
+            if(expression[i]=='+' || expression[i]=='-' || expression[i]=='*')
             {
                 vector<int>left_part=diffWaysToCompute(expression.substr(0,i));
                 vector<int>right_part=diffWaysToCompute(expression.substr(i+1,expression.length()));
