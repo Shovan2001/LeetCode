@@ -25,12 +25,12 @@ public:
         
         if(head1!=NULL)
         {
+            root->right=head1;
+            
             TreeNode* temp=head1;
-
             while(temp!=NULL && temp->right!=NULL)
             temp=temp->right;
 
-            root->right=head1;
             temp->right=head2;
         }
         else
