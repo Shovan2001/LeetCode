@@ -41,8 +41,8 @@ public:
 
     void flatten(TreeNode* root) 
     {
-        if(root==NULL)
-        return;
+        // if(root==NULL)
+        // return;
 
         flatten_bt_to_ll(root);
         // flatten(root->right);
