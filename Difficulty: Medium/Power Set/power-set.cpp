@@ -3,36 +3,30 @@
 using namespace std;
 
 // } Driver Code Ends
+
 class Solution{
 	public:
-	    void solve(vector<string> &ans,string ip,string op)
+	    void solve(vector<string> &ans,string op,string s,int idx)
 	    {
-	        if(ip.length()==0)
+	        if(idx==s.length())
 	        {
-	            if(op.length()!=0)
 	            ans.push_back(op);
 	            return;
 	        }
 	        
-	        string op1=op;
-	        string op2=op;
+	        solve(ans,op+s[idx],s,idx+1);
+	        solve(ans,op,s,idx+1);
 	        
-	        op2+=ip[0];
-	        ip.erase(ip.begin()+0);
-	        
-	        solve(ans,ip,op1);
-	        solve(ans,ip,op2);
 	    }
-		vector<string> AllPossibleStrings(string s)
-		{
+		vector<string> AllPossibleStrings(string s){
 		    // Code here
-		    string op="";
 		    vector<string>ans;
-		    solve(ans,s,op);
+		    solve(ans,"",s,0);
 		    sort(ans.begin(),ans.end());
 		    return ans;
 		}
 };
+
 
 //{ Driver Code Starts.
 int main(){
@@ -47,7 +41,9 @@ int main(){
 			cout << i <<" ";
 		cout << "\n";
 
-	}
+	
+cout << "~" << "\n";
+}
 	return 0;
 }
 // } Driver Code Ends
