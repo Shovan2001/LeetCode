@@ -23,14 +23,6 @@ public:
             }
         }
 
-        for(int i=1;i<adj_list.size()+1;i++)
-        {
-            cout<<i<<"--> ";
-            for(int j=0;j<adj_list[i].size();j++)
-            cout<<adj_list[i][j]<<" ";
-            cout<<"\n";
-        }
-
         vector<vector<int>> ans;
         unordered_set<int> found;
 
