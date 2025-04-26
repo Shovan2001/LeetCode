@@ -10,8 +10,8 @@ public:
         return nums.size()-1;
         else
         {
-            int l=1,h=nums.size()-2;
-            while(l<=h)
+            int l=0,h=nums.size()-1;
+            while(l<h)
             {
                 int mid=l+(h-l)/2;
                 if(nums[mid]>nums[mid-1] && nums[mid]>nums[mid+1])
@@ -19,7 +19,7 @@ public:
                 else if(nums[mid]>nums[mid-1])
                 l=mid+1;
                 else
-                h=mid-1;
+                h=mid;
             }
         }
         return -1;
