@@ -10,7 +10,7 @@ public:
         return nums.size()-1;
         else
         {
-            int l=0,h=nums.size()-1;
+            int l=0,h=nums.size();
             while(l<h)
             {
                 int mid=l+(h-l)/2;
