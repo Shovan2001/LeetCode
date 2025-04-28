@@ -7,28 +7,60 @@ using namespace std;
 
 class Solution {
   public:
-    bool dfs_check_cycle(vector<vector<int>> &adj, unordered_set<int> &found,int node,int parent)
-    {
-        // if(found.find(node)!=found.end())
-        // return false;
+    // bool dfs_check_cycle(vector<vector<int>> &adj, unordered_set<int> &found,int node,int parent)
+    // {
         
+    //     found.insert(node);
+        
+    //     for(auto it: adj[node])
+    //     {
+    //         if(it==parent)
+    //         continue;
+            
+    //         if(found.find(it)!=found.end())
+    //         return true;
+            
+            
+    //         if(dfs_check_cycle(adj,found,it,node))
+    //         return true;
+    //     }
+        
+    //     return false;
+    // }
+    
+    
+    bool bfs_check_cycle(vector<vector<int>> &adj, unordered_set<int> &found,int node,int parent)
+    {
+        queue<pair<int,int>>q;
+        
+        q.push({node,parent});
         found.insert(node);
         
-        for(auto it: adj[node])
+        while(!q.empty())
         {
-            if(it==parent)
-            continue;
+            pair<int,int>temp=q.front();
+            q.pop();
             
-            if(found.find(it)!=found.end())
-            return true;
+            int temp_node=temp.first;
+            int temp_parent=temp.second;
             
-            
-            if(dfs_check_cycle(adj,found,it,node))
-            return true;
+            for(auto it: adj[temp_node])
+            {
+                if(it==temp_parent)
+                continue;
+                
+                if(found.find(it)!=found.end())
+                return true;
+                
+                q.push({it,temp_node});
+                found.insert(it);
+                
+            }
             
         }
         
         return false;
+        
     }
     
     bool isCycle(int V, vector<vector<int>>& edges) {
@@ -47,11 +79,21 @@ class Solution {
         
         unordered_set<int>found;
         
+        //dfs
+        // for(int i=0;i<V;i++)
+        // {
+        //     if(found.find(i)==found.end() && dfs_check_cycle(adj,found,i,-1))
+        //     return true;
+        // }
+        
+        
+        //bfs
         for(int i=0;i<V;i++)
         {
-            if(found.find(i)==found.end() && dfs_check_cycle(adj,found,i,-1))
+            if(found.find(i)==found.end() && bfs_check_cycle(adj,found,i,-1))
             return true;
         }
+        
         return false;
     }
 };
