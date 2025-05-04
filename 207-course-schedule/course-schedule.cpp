@@ -10,8 +10,9 @@ public:
             int u=prerequisites[i][0];
             int v=prerequisites[i][1];
             
-            adj[u].push_back(v);
-            indegree[v]++;
+            //NOTE(v and u interchanged) as in this question [u,v] means v--->u
+            adj[v].push_back(u);
+            indegree[u]++;
         }
         
         queue<int>q;
