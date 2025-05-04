@@ -9,7 +9,7 @@ public:
         {
             int u=prerequisites[i][0];
             int v=prerequisites[i][1];
-            //NOTE
+            //NOTE(v and u interchanged) as in this question [u,v] means v--->u
             adj[v].push_back(u);
             indegree[u]++;
         }
