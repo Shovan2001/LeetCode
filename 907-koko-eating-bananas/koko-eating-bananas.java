@@ -8,17 +8,7 @@ class Solution {
             max=piles[i];
         }
         return max;
-    } 
-    int findmin(int piles[])
-    {
-        int min=piles[0];
-        for(int i=1;i<piles.length;i++)
-        {
-            if(piles[i]<min)
-            min=piles[i];
-        }
-        return min;
-    } 
+    }
     int canfinishinhours(int piles[],int rate)
     {
         int tot_time=0;
