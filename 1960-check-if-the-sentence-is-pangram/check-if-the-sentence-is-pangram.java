@@ -1,7 +1,7 @@
 class Solution {
     public boolean checkIfPangram(String sentence) 
     {
-        sentence=sentence.toLowerCase();
+        // sentence=sentence.toLowerCase();
 
         int []alpha=new int[26];
 
