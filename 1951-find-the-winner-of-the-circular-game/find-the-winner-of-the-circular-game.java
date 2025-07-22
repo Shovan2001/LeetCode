@@ -1,5 +1,5 @@
 class Solution {
-    public int solve(ArrayList<Integer> l,int currIdx,int k)
+    public int solve(List<Integer> l,int currIdx,int k)
     {
         if(l.size()==1)
         return l.get(0);
@@ -14,7 +14,7 @@ class Solution {
         k=k-1;
         k%=n;
         
-        ArrayList<Integer> l =new ArrayList<>();
+        List<Integer> l =new ArrayList<>();
 
         for(int i=0;i<n;i++)
         {
