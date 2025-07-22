@@ -18,11 +18,11 @@ class Solution {
 
         for(int i=0;i<n;i++)
         {
-            l.add(i);
+            l.add(i+1);
         }
         
         int x=solve(l,0,k);
 
-        return x+1;
+        return x;
     }
 }
