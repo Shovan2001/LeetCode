@@ -32,10 +32,9 @@ class Solution {
         return low;
     }
     public boolean search(int[] nums, int target) {
+        
         int pos_of_min_elem=minElemPos(nums);
-        System.out.println(pos_of_min_elem);
         int pos;
-        System.out.println(pos_of_min_elem);
         
         pos=advBinarySearch(nums,0,pos_of_min_elem-1,target);
 
