@@ -17,8 +17,7 @@ class Solution {
     public int[] successfulPairs(int[] spells, int[] potions, long success) 
     {
         Arrays.sort(potions);
-        int n=spells.length;
-        int ans[]=new int[n];
+        int ans[]=new int[spells.length];
 
         for(int i=0;i<spells.length;i++)
         {
