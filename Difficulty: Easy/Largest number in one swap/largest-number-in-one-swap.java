@@ -24,7 +24,7 @@ class Solution {
                 maxipos=i;
             }
             
-            if(s.charAt(i)-'0'<maxi)
+            else if(s.charAt(i)-'0'<maxi)
             {
                 pos1=i;
                 pos2=maxipos;
