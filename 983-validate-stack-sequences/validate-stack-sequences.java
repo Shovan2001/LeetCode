@@ -8,7 +8,7 @@ class Solution {
         {
             st.push(pushed[i]);
 
-            while(!st.isEmpty() && popped[x]==st.peek() && x<n)
+            while(!st.isEmpty() && x<n && popped[x]==st.peek())
             {
                 x++;
                 st.pop();
