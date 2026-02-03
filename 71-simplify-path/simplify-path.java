@@ -39,15 +39,12 @@ class Solution {
 
         System.out.println(ans);
 
-        if(ans.equals(""))
+        if(ans.equals("") || ans.equals("/"))
         return "/";
 
         if(ans.charAt(0)!='/')
         ans="/"+ans;
         ans=ans.substring(0,ans.length()-1);
-
-        if(ans.equals(""))
-        return "/";
 
         return ans;
     }
