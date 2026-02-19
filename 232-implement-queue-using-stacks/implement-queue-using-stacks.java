@@ -15,7 +15,13 @@ class MyQueue {
     
     public int pop() {
         
-        peek();
+        if(output.isEmpty())
+        {
+            while(!input.isEmpty())
+            {
+                output.push(input.pop());
+            }
+        }
         return output.pop();
     }
     
