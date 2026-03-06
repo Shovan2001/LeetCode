@@ -8,7 +8,7 @@ class Solution {
         {
             mp.put(arr[i],mp.getOrDefault(arr[i],0)+1);
             
-            if(mp.size()>2)
+            while(mp.size()>2)
             {
                 mp.put(arr[j],mp.get(arr[j])-1);
                 
