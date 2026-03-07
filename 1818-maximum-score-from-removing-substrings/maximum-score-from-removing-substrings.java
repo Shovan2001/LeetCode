@@ -2,16 +2,21 @@ class Solution {
     public int maximumGain(String s, int x, int y) 
     {
         String maxString,minString;
+        int maxPoints,minPoints;
 
         if(x>y)
         {
             maxString="ab";
             minString="ba";
+            maxPoints=x;
+            minPoints=y;
         }
         else
         {
             maxString="ba";
-            minString="ab";    
+            minString="ab";
+            maxPoints=y;
+            minPoints=x;
         }
         
         int points=0;
@@ -25,7 +30,7 @@ class Solution {
             if(ch==maxString.charAt(1) && !st.isEmpty() && st.peek()==maxString.charAt(0))
             {
                 st.pop();
-                points+=(x>y)?x:y;
+                points+=maxPoints;
             }
             else
             st.push(ch);
@@ -45,7 +50,7 @@ class Solution {
             if(ch==minString.charAt(1) && !st.isEmpty() && st.peek()==minString.charAt(0))
             {
                 st.pop();
-                points+=(x<y)?x:y;
+                points+=minPoints;
                 
             }
             else
