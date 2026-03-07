@@ -80,24 +80,6 @@ class Solution {
             
             // System.out.println();
         }
-        // for(int i=0;i<col;i++)
-        // {
-        //     heights[i]=matrix[0][i]-'0';
-        //     // System.out.println(heights[i]);
-            
-        // }
-
-        // for(int i=1;i<row;i++)
-        // {
-        //     histArea=largestHistogramArea(heights);
-        //     max_area=Math.max(max_area,histArea);
-        //     System.out.println(max_area);
-        //     for(int j=0;j<col;j++)
-        //     {
-        //         heights[i]=heights[i-1]+(matrix[i][j]-'0');
-        //     }
-        // }
-        // max_area=Math.max(max_area,histArea);
 
         return max_area;
         
