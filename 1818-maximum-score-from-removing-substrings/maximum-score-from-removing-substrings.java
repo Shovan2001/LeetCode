@@ -13,8 +13,6 @@ class Solution {
             maxString="ba";
             minString="ab";    
         }
-        // System.out.println(maxString);
-        // System.out.println(minString);
         
         int points=0;
         Stack<Character>st=new Stack<>();
