@@ -41,7 +41,7 @@ class Solution {
         {
             str=st.pop()+str;
         }
-        // System.out.println(str);
+        
         //minString
         for(int i=0;i<str.length();i++)
         {
@@ -51,7 +51,6 @@ class Solution {
             {
                 st.pop();
                 points+=minPoints;
-                
             }
             else
             st.push(ch);
