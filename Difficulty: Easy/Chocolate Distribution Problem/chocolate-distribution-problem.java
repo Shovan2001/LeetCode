@@ -5,20 +5,19 @@ class Solution {
         // your code here
         Collections.sort(arr);
         
-        int mini=Integer.MAX_VALUE;
-        int s=0,e=s+m-1;    // Window
-                            // shifts by 1 place 
+        int l=0,h=m-1;
+        int min_diff=Integer.MAX_VALUE;
         
-        while(e<arr.size())
+        while(h<arr.size())
         {
-            int diff=arr.get(e)-arr.get(s);
+            int diff=arr.get(h)-arr.get(l);
             
-            if(diff<mini)
-            mini=diff;
+            if(diff<min_diff)
+            min_diff=diff;
             
-            s++;
-            e++;
+            l++;
+            h++;
         }
-        return mini;
+        return min_diff;
     }
 }
