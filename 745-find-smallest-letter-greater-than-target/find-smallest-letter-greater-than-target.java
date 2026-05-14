@@ -11,17 +11,7 @@ class Solution {
             else
             h=mid;
         }
-        System.out.println(l);
-        if(l<letters.length-1 && letters[l]==target)
-        {
-            if(letters[letters.length-1]==target)
-            return letters[0];
-            else
-            return letters[l+1];
-        }    
-        else if(l<=letters.length-1 && letters[l]!=target)
-            return letters[l];
-        else
-            return letters[0];
+        
+        return letters[l%letters.length];
     }
 }
