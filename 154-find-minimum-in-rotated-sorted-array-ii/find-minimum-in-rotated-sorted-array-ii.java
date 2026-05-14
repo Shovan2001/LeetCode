@@ -5,10 +5,10 @@ class Solution {
 
         while(l<h)
         {
-
+            //skip duplicates
             while(l<h && nums[l]==nums[l+1])
             l++;
-
+            //skip duplicates
             while(l<h && nums[h]==nums[h-1])
             h--;
             
