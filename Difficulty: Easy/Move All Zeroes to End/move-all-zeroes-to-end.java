@@ -1,5 +1,5 @@
 class Solution {
-    void swap(int arr[],int x,int y)
+    void swap(int x,int y,int arr[])
     {
         int temp=arr[x];
         arr[x]=arr[y];
@@ -7,16 +7,14 @@ class Solution {
     }
     void pushZerosToEnd(int[] arr) {
         // code here
-        int last_non_zero=0;
+        int s=0;
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]!=0)
             {
-                swap(arr,i,last_non_zero);
-                last_non_zero++;
+                swap(s,i,arr);
+                s++;
             }
         }
-        
-        // return arr;
     }
 }
