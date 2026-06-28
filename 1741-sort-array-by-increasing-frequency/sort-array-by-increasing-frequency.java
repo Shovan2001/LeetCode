@@ -15,7 +15,6 @@ class Solution {
             return y-x;
         })//.mapToInt(x->x.intValue()).toArray();
         .mapToInt(Integer::intValue).toArray();
-        // System.out.println(mp);
-        // return new int[]{0,0};
+
     }
 }
